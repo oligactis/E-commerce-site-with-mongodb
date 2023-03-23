@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "firebase/auth";
-
 import initializeAuthentication from '../Firebase/firebase.init';
 
 initializeAuthentication();
@@ -9,17 +8,11 @@ const useFirebase = () => {
     const [user, setUser] = useState({});
     const [loading, setLoading] = useState(true)
     const auth = getAuth();
+    const googleProvider = new GoogleAuthProvider();
 
-    const signInUsingGoogle = async () => {
-        const googleProvider = new GoogleAuthProvider();
-        // signInWithPopup(auth, googleProvider)
-        //     .finally(() => { setLoading(false) });
-        signInWithPopup(auth, googleProvider)
-            .then(result => {
-                setUser(result.user)
-            })
-            .catch(error => { console.log(error) })
-            .finally(() => setLoading(false))
+    const signInUsingGoogle = () => {
+        return signInWithPopup(auth, googleProvider)
+            .finally(() => { setLoading(false) });
     }
 
     const logOut = () => {

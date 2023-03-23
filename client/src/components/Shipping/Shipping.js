@@ -13,7 +13,7 @@ const Shipping = () => {
         fetch('http://localhost:5000/orders', {
             method: 'POST',
             headers: {
-                'constent-type': 'application/json'
+                'content-type': 'application/json'
             },
             body: JSON.stringify(data)
         })
@@ -24,6 +24,7 @@ const Shipping = () => {
                 clearTheCart();
                 reset();
             }
+            console.log(result)
         })
     };
     return (

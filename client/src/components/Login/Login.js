@@ -10,12 +10,12 @@ const Login = () => {
     const redirect_uri = location.state?.from || '/shop';
 
 
-    // const handleGoogleLogin = () => {
-    //     signInUsingGoogle()
-    //         // .then(result => {
-    //         //     history.push(redirect_uri);
-    //         // })
-    // }
+    const handleGoogleLogin = () => {
+        signInUsingGoogle()
+            .then(result => {
+                history.push(redirect_uri);
+            })
+    }
 
     return (
         <div className="login-form">
@@ -32,7 +32,7 @@ const Login = () => {
                 <div>-------or----------</div>
                 <button
                     className="btn-regular"
-                    onClick={signInUsingGoogle}
+                    onClick={handleGoogleLogin}
                 >Google Sign In</button>
             </div>
         </div>

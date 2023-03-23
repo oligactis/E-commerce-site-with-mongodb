@@ -1,4 +1,3 @@
-// console.log(process.env);
 const firebaseConfig = {
     apiKey: "AIzaSyC7tDTZ2qQxvZS1VRiM1I_A8eNx1poFXoc",
     authDomain: "ema-john-simple-a9151.firebaseapp.com",
