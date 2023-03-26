@@ -35,6 +35,7 @@ async function verifyToken(req, res, next){
 
         }
     }
+    next();
 }
 
 async function run(){
